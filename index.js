@@ -12,6 +12,7 @@ const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('
 //adds the events to eventFiles array
 const eventFiles = fs.readdirSync('./events').filter(file => file.endsWith('.js'));
 
+
 for(const file of eventFiles) {
     const event = require(`./events/${file}`);
     if(event.once) {
