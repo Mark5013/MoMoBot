@@ -25,6 +25,7 @@ module.exports = {
         if(name === 'city') {
             //gets the name of the city that the user inputted 
             const city  = interaction.options.getString('place');
+            if(city === " ") { interaction.reply("Please enter a valid city name!")}
             //if(interaction.getString('scale') !== 'F' || 'C' || 'f' || 'c') { interaction.reply('Invalid temperature scale') };
             weather.find({search: `${city}`, degreeType: 'F'}, function(err, result) {
                 if(err) {
